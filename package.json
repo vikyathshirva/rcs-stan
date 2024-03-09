@@ -1,0 +1,11 @@
+{
+  "name": "rcs",
+  "version": "1.0.0",
+  "description": "A race condition simulator using redis as a data store.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vikyath Shirva",
+  "license": "ISC"
+}
