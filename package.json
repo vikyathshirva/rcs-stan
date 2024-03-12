@@ -3,9 +3,22 @@
   "version": "1.0.0",
   "description": "A race condition simulator using redis as a data store.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start-with-coordinate": "node index.js coordinate",
+    "start-without-coordinate": "node index.js",
+    "start-cli": "node cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vikyath Shirva",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "buffer": "^6.0.3",
+    "ioredis": "^5.3.2",
+    "redis": "^4.6.13"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
 }

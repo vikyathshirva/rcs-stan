@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  redis-rcs:
+    image: redis
+    container_name: redis-rcs
+    ports:
+      - "127.0.0.1:6379:6379"
+
+  rcs-rabbit:
+    image: rabbitmq:3-management
+    container_name: rcs-rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+
+  node-app:
+    build:
+      context: .
+    image: rcs-stan
+    container_name: rcs-stan-v1
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis-rcs
+      - rcs-rabbit
